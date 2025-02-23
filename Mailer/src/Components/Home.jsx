@@ -4,6 +4,7 @@ import axios from 'axios';
 const Home = () => {
     const [strToEmail, setStrToEmail] = useState('');
     const [showPopup, setShowPopup] = useState(false);
+    const [showError, setShowError] = useState(false);
     //let [intMailSent,setIntMailSent] = useState(0);
 
     const emailOptions = [
@@ -12,13 +13,18 @@ const Home = () => {
         'example3@outlook.com'
     ];
 
-    async function generateEmail() { 
-       // setIntMailSent(intMailSent++)
-       setShowPopup(true);
-       setTimeout(() => setShowPopup(false), 3000);    
-        const response = await axios.post('http://localhost:3000/', {
-            strToEmail
-        });
+    async function generateEmail(strToEmail) {
+        if(strToEmail==''){
+            setShowError(true);
+            setTimeout(() => setShowError(false), 2000); 
+        }else{
+            setShowPopup(true);
+            setTimeout(() => setShowPopup(false), 3000);    
+             const response = await axios.post('http://localhost:3000/', {
+                 strToEmail
+             });
+        }
+
 
     }
 
@@ -45,6 +51,19 @@ const Home = () => {
                     borderRadius: '5px'
                 }}>
                     Message Sent Successfully!
+                </div>
+            )}
+             {showError && (
+                <div style={{
+                    position: 'fixed',
+                    bottom: '20px',
+                    right: '20px',
+                    background: 'red',
+                    color: 'white',
+                    padding: '10px',
+                    borderRadius: '5px'
+                }}>
+                    Select Email
                 </div>
             )}
         </div>
