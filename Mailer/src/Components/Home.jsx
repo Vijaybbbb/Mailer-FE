@@ -9,7 +9,7 @@ const Home = () => {
 
     const emailOptions = [
         'qanucem@gmail.com',
-        'vijay@nucore.in',
+        'vijayramkp2002@gmail.com',
         'example3@outlook.com'
     ];
 
