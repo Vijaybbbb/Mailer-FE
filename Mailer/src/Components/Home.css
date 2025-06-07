@@ -1,0 +1,74 @@
+/* home.css */
+
+.home-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.home-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #444;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.send-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
+}
+
+.popup-success, .popup-error {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 16px;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.popup-success {
+  background-color: green;
+}
+
+.popup-error {
+  background-color: red;
+}
+
+.custom-toast {
+  width: 100px !important; /* or any size */
+  min-height: 60px !important;
+  font-size: 10px;
+  padding: 12px 16px;
+}
